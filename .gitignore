@@ -1,0 +1,50 @@
+# Byte-compiled Python files
+*.pyc
+*.pyo
+__pycache__/
+
+# Virtual environment folder
+venv/
+env/
+
+# Django secret key and environment variables
+*.env
+
+# Database files
+*.sqlite3
+*.db
+
+# Media uploads
+/media/
+
+# Static files (collected for production)
+staticfiles/
+static/
+
+# Logs
+*.log
+logs/
+
+# Django migrations
+*/migrations/*.py
+!*/migrations/__init__.py
+
+# IDE configurations
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Testing files
+.coverage
+.tox/
+.pytest_cache/
+.nox/
+
+# Build artifacts
+*.egg
+*.egg-info/
+dist/
+build/

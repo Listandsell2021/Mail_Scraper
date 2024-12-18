@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        #searchBox {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .input-type {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .lilistt {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+        }
+
+        .lilist li {
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+
+        .lilist li:hover {
+            background-color: #eaeaea;
+        }
+
+        #submitbtn:hover{
+            cursor: pointer;
+        }
+
+        .inputboxes {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .maindiv{
+            display: flex;
+        }
+        .divitem{
+            margin: 25px;
+            width: 20rem;
+        }
+        .hidden{
+            display: none;
+        }
+
+        .emaildiv{
+            width: 50%;
+            height: 35%;
+            padding: 10px;
+            border: 1px solid black ;
+        }
+    </style>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="maindiv">
+            <div class="divitem">
+                <select name="websites" id="websites" class="inputboxes">
+                    <option>--select--</option>
+                     {%for item in website_name%}
+                    <option value="{{item.id}}">{{item.website_name}}</option>
+                    {%endfor%}
+                  </select>
+            </div>
+            <div class="divitem">
+                <input type="text" id="branch_input" class="inputboxes" name="branch_name" placeholder="Was">
+                <ul id="suggestions"  class="lilist" style="display: none;"></ul>
+            </div>
+            <div class="divitem">
+                <input type="text" id="search-bar" class="inputboxes" name="searchbar" placeholder="Wo">
+                <ul id="city-list" class="lilist hidden"></ul>
+            </div>
+            <div class="divitem">
+                <button type="button" class="inputboxes"  id="submitbtn">Submit</button>
+            </div>
+        </div>
+        
+        <div class="emaildiv" style="display: none;">
+            <p>Available Email ID's</p>
+            <ol id="emailids" style="display: none;">
+            </ol>
+        </div>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</body>
+</html>
