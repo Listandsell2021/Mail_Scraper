@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-2%8ykee(uo81z_naly0@wxv4gwaho*lpyab-ey98sxr8%b%4p2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['136-243-68-103','127.0.0.1']
+ALLOWED_HOSTS = ['epic-saha.136-243-68-103.plesk.page','136.243.68.103',]
 
 
 # Application definition
